@@ -1,0 +1,230 @@
+/* ===== style.css: zo ziet jouw leer-lab eruit ===== */
+
+/* ---------- Dag 2: jouw kleuren (verander ze maar!) ---------- */
+:root {
+    --hoofdkleur: #00396e;
+    --achtergrond: #00396e;
+    --tekstkleur: #ffffff;
+    --rood: #ff7675;
+    --blauw: #74b9ff;
+    --groen: #55efc4;
+    --geel: #ffeaa7;
+    --magenta: #FF00FF;
+    --paars: #800080;
+}
+
+body {
+    font-family: "Trebuchet MS", Arial, sans-serif;
+    background: var(--achtergrond);
+    color: var(--tekstkleur);
+    margin: 0;
+    text-align: center;
+}
+
+header {
+    background: var(--hoofdkleur);
+    color: white;
+    padding: 16px;
+}
+
+header h1 {
+    margin: 0;
+}
+
+#sterren {
+    font-size: 1.3em;
+    margin: 8px 0 0;
+}
+main {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 16px;
+}
+
+#begroeting {
+    font-size: 1.4em;
+}
+
+.menu {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.kaart {
+    font-size: 1.4em;
+    font-family: inherit;
+    padding: 28px 10px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    box-shadow: 0 6px 0 rgba(0,0,0,0.15);
+}
+
+.kaart:hover {
+    transform: scale(1.05);
+}
+
+.rood { background: var(--rood); }
+.blauw { background: var(--blauw); }
+.groen { background: var(--groen); }
+.geel { background: var(--geel); }
+.magenta { background: var(--magenta); }
+.paars {background: var(--paars); }
+
+/* ---------- Dag 3: schermen ---------- */
+.verborgen {
+    display: none;
+}
+
+.terug {
+    float: left;
+    font-family: inherit;
+    font-size: 1em;
+    padding: 8px 14px;
+    border: none;
+    border-radius: 12px;
+    background: white;
+    cursor: pointer;
+}
+
+/* ---------- Dag 4: sommen ----------*/
+.som {
+    font-size: 2.4em;
+    font-weight: bold;
+    margin: 24px 0;
+}
+
+input {
+    font-size: 2em;
+    width: 180px;
+    text-align: center;
+    padding: 8px;
+    border: 3px solid var(--hoofdkleur);
+    border-radius: 12px;
+}
+
+/* ---------- Dag 5: goed of fout ---------- */
+.feedback {
+    font-size: 1.4em;
+    min-height: 1.5em;
+}
+
+.feedback.goed {color: #00b894; }
+.feedback.fout {color: #d63031; }
+
+
+/* ---------- Dag 6: soort sommen kiezen ---------- */
+select {
+    font-family: inherit;
+    font-size: 1.2em;
+    padding: 6px;
+    border-radius: 10px;
+}
+
+/* ---------- Dag 7: lezen en quiz ---------- */
+#tekst-lezen {
+    text-align: left;
+    background: palevioletred;
+    padding: 4px 20px 12px;
+    border-radius: 16px;
+    line-height: 1.6;
+    font-size: 1.15em;
+}
+
+#tekst-lezen:empty {
+    display: none;
+}
+
+#tekst-lezen p {
+    white-space: pre-line;
+}
+
+.vraag {
+    font-size: 1.3em;
+    font-weight: bold;
+}
+
+.keuze {
+    display: block;
+    width: 100%;
+    max-width: 520px;
+    margin: 8px auto;
+    padding: 12px;
+    font-family: inherit;
+    font-size: 1.15em;
+    border: 3px solid var(--hoofdkleur);
+    border-radius: 12px;
+    background: white;
+    cursor: pointer;
+}
+
+.keuze:hover:enabled {
+    background: var(--achtergrond);
+}
+
+.keuze:disabled {
+    color: var(--tekstkleur);
+    cursor: default;
+}
+
+.keuze.goed { background: var(--groen); }
+.keuze.fout { background: var(--rood); }
+
+/* ---------- Dag 11: de uitdaging ---------- */
+.uitdaging {
+    margin-top: 20px;
+    font-family: inherit;
+    font-size: 1.3em;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 12px;
+    background: #e17055;
+    color: white;
+    cursor: pointer;
+}
+
+#timer {
+    font-size: 1.4em;
+    font-weight: bold;
+}
+
+/* ---------- Dag 12: dagdoel en badges ---------- */
+.dagdoel {
+    margin-top: 24px;
+}
+
+.balk {
+    height: 24px;
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 2px solid var(--hoofdkleur);
+}
+
+#dagdoel-balk {
+    height: 100%;
+    width: 0;
+    background: var(--groen);
+    transition: width 0.5s;
+}
+
+.badge {
+    display: inline-block;
+    margin: 12px 6px;
+    padding: 8px 14px;
+    background: #000000;
+    border-radius: 20px;
+    font-size: 1.1em;
+}
+
+.badge.op-slot {
+    opacity: 0.4;
+}
+
+
+/* ---------- Dag 13: topografie ---------- */
+.paars { background: #800080; }
+
+.breed {
+    grid-column: span 2;
+}

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mijn Leer-Lab</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Dag 1: hier komt jouw code! -->
+<header>
+    <h1>🚀 leer lab van <span id="naam">adi</span></h1>
+    <p id="sterren">⭐ 0 sterren</p>
+</header>
+
+<main>
+
+    <!-- ===== HOME ===== -->
+    <section id="begroeting">Wat ga je vandaag oefenen?
+        <div class="menu">
+            <button class="kaart rood" onclick="toonScherm('rekenen')">🔢<br>Rekenen</button>
+            <button class="kaart blauw" onclick="toonScherm('lezen')">📖<br>Begrijpend lezen</button>
+            <button class="kaart groen" onclick="toonScherm('wiskunde')">📐<br>Wiskunde</button>
+            <button class="kaart magenta" onclick="toonScherm('geschiedenis')">🏰<br>Geschiedenis</button>
+            <!-- Dag 13 -->
+            <button class="kaart paars breed" onclick="toonScherm('topografie')">🌍<br>Topografie</button>
+
+
+        </div>
+        <!-- Dag 12 -->
+        <div class="dagdoel">
+            <p id="dagdoel-tekst"></p>
+            <div class="balk"><div id="dagdoel-balk"></div></div>
+        </div>
+        <div id="badges"></div>
+
+    </section>
+    <!-- ===== REKENEN ===== -->
+    <section id="scherm-rekenen" class="scherm verborgen">
+        <button class="terug" onclick="toonScherm('home')">⬅️ Terug</button>
+        <h2> 🔢 Rekenen</h2>
+        <!-- Dag 6 -->
+        <select id="soort-rekenen" onchange="nieuweSom('rekenen')">
+            <option value="soort-rekenen" onchange="nieuweSom('rekenen')">
+            <option value="plusmin">Plus en min tot 1000000000</option>
+            <option value="keer">Grote keersommen</option>
+            <option value="delen">Deelsommen</option>
+            <option value="mix">Alles door elkaar</option>
+        </select>
+
+        <!-- Dag 4 -->
+        <p class="som" id="vraag-rekenen"></p>
+        <form onsubmit="controleer('rekenen'); return false;">
+            <input id="antwoord-rekenen" autocomplete="off" inputmode="decimal">
+            <button type="submit">Check!</button>
+        </form>
+        <p class="feedback" id="feedback-rekenen"></p>
+        <!-- Dag 11 -->
+        <button class="uitdaging" onclick="startUitdaging()">⏱️ 1-minuut-uitdaging</button>
+        <p id="timer"></p>
+    </section>
+
+    <!-- ===== BEGRIJPEND LEZEN ===== -->
+    <section id="scherm-lezen" class="scherm verborgen">
+        <button class="terug" onclick="toonScherm('home')">⬅️ Terug</button>
+        <h2>📖 Begrijpend lezen</h2>
+        <div id="teksten-lijst"></div>
+        <article id="tekst-lezen"></article>
+        <p class="vraag" id="vraag-lezen"></p>
+        <div id="keuzes-lezen"></div>
+        <p class="feedback" id="feedback-lezen"></p>
+    </section>
+
+    <!-- ===== WISKUNDE ===== -->
+    <section id="scherm-wiskunde" class="scherm verborgen">
+        <button class="terug" onclick="toonScherm('home')">⬅️ Terug</button>
+        <h2>📐 Wiskunde</h2>
+        <select id="soort-wiskunde" onchange="nieuweSom('wiskunde')">
+            <option value="breuken">Breuken</option>
+            <option value="komma">Kommagetallen</option>
+            <option value="procent">Procenten</option>
+            <option value="meten">Meten en omrekenen</option>
+            <option value="oppervlakte">Omtrek en oppervlakte</option>
+            <option value="mix">Alles door elkaar</option>
+        </select>
+        <p class="som" id="vraag-wiskunde"></p>
+        <form onsubmit="controleer('wiskunde'); return false;">
+            <input id="antwoord-wiskunde" autocomplete="off" inputmode="decimal">
+            <button type="submit">Check!</button>
+        </form>
+        <p class="feedback" id="feedback-wiskunde"></p>
+    </section>
+
+    <!-- ===== GESCHIEDENIS ===== -->
+    <section id="scherm-geschiedenis" class="scherm verborgen">
+        <button class="terug" onclick="toonScherm('home')">⬅️ Terug</button>
+        <h2>🏰 Geschiedenis</h2>
+        <p class="vraag" id="vraag-geschiedenis"></p>
+        <div id="keuzes-geschiedenis"></div>
+        <p class="feedback" id="feedback-geschiedenis"></p>
+    </section>
+
+
+
+
+    <!-- ===== TOPOGRAFIE (Dag 13) ===== -->
+    <section id="scherm-topografie" class="scherm verborgen">
+        <button class="terug" onclick="toonScherm('home')">⬅️ Terug</button>
+        <h2>🌍 Topografie</h2>
+        <select id="soort-topografie" onchange="startTopografie()">
+            <option value="provincie-hoofdstad">Provincies en hun hoofdstad</option>
+            <option value="provincie-stad">In welke provincie ligt...?</option>
+            <option value="europa-hoofdstad">Hoofdsteden van Europa</option>
+            <option value="europa-land">Welk land hoort bij de hoofdstad?</option>
+            <option value="mix">Alles door elkaar</option>
+        </select>
+        <p class="vraag" id="vraag-topografie"></p>
+        <div id="keuzes-topografie"></div>
+        <p class="feedback" id="feedback-topografie"></p>
+    </section>
+</main>
+
+
+<script src="app.js"></script>
+<script src="rekenen.js"></script>
+
+<script src="quiz.js"></script>
+<script src="data-lezen.js"></script>
+<script src="data-geschiedenis.js"></script>
+<script src="uitdaging.js"></script>
+<script src="data-topografie.js"></script>
+<script src="topografie.js"></script>
+</body>
+</html>
+
+
